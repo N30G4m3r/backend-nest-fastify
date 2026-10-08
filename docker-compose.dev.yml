@@ -1,0 +1,25 @@
+services:
+  backend-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: backend-dev
+    restart: unless-stopped
+    env_file:
+      - path: .env.dev
+        required: false
+      - path: .env.dev.example
+        required: false
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - PORT=${PORT:-3000}
+    ports:
+      - "${HOST_PORT:-3000}:${PORT:-3000}"
+    volumes:
+      - ./src:/app/src
+      - ./nest-cli.json:/app/nest-cli.json
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./tsconfig.build.json:/app/tsconfig.build.json
+      - /app/node_modules
+    command: pnpm run start:dev
