@@ -109,3 +109,9 @@ pnpm run build
 # Ejecutar producción
 pnpm run start:prod
 ```
+
+---
+
+## 📄 Licencia
+
+Este proyecto es una demostración de código abierto y está distribuido bajo la licencia [MIT](LICENSE).
