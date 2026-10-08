@@ -5,7 +5,7 @@ export class AppService {
   private readonly startTime = Date.now();
 
   getHello(): string {
-    return 'Hola Mundo';
+    return '<h1>Hola Mundo desde Docker</h1>';
   }
 
   getHealth() {
